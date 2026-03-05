@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Tecno_wed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 32px 28px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .links a {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 500;
+            color: #fff;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            box-shadow: 0 8px 22px rgba(102, 126, 234, 0.4);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .links a:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(102, 126, 234, 0.55);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mi proyecto Tecno_wed</h1>
+        <p>Elige qué parte de mi página quieres visitar.</p>
+        <div class="links">
+            <a href="hola.html">Página personal (Sobre mí y películas)</a>
+            <a href="peliculas.html">Solo sección de películas</a>
+        </div>
+    </div>
+</body>
+</html>
