@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WED-HOLAMUN - Sobre mí y películas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px 32px;
+            max-width: 800px;
+            width: 100%;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 18px 0 10px 0;
+        }
+
+        .nav-button {
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 1px solid #ccd3ff;
+            background: #f4f5ff;
+            color: #444;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(102, 126, 234, 0.35);
+        }
+
+        .nav-button.nav-button--active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+        }
+
+        .section {
+            margin-top: 18px;
+        }
+
+        .oculta {
+            display: none;
+        }
+
+        .cv-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 720px) {
+            .cv-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 30px auto;
+            border-radius: 2px;
+        }
+
+        .info {
+            color: #666;
+            font-size: 1em;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .cv-sidebar {
+            background: #fafbff;
+            border-radius: 16px;
+            padding: 20px 18px;
+            text-align: center;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            display: block;
+        }
+
+        .profile-sticker {
+            position: absolute;
+            right: -6px;
+            bottom: -6px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #ffdd59;
+            border: 3px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .cv-name {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .cv-title {
+            font-size: 0.95em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .cv-contact {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .cv-section-title {
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            color: #444;
+        }
+
+        .cv-list {
+            margin-left: 18px;
+            margin-bottom: 6px;
+        }
+
+        .cv-list li {
+            margin-bottom: 3px;
+        }
+
+        .cv-main {
+            text-align: left;
+        }
+
+        /* Películas */
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .movie-card {
+            border-radius: 16px;
+            border: 1px solid #e0e3ff;
+            padding: 10px 10px 14px 10px;
+            background: #fafbff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(102, 126, 234, 0.25);
+            border-color: #c4cafc;
+        }
+
+        .movie-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .movie-card:hover .movie-poster {
+            transform: scale(1.08);
+        }
+
+        .movie-title {
+            font-size: 0.98em;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .movie-year {
+            font-size: 0.8em;
+            color: #777;
+            margin-bottom: 4px;
+        }
+
+        .movie-notes {
+            font-size: 0.82em;
+            color: #555;
+        }
+
+        .footer {
+            margin-top: 28px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 0.9em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mi página personal</h1>
+        <p class="subtitle">Sobre mí y algunas de mis películas favoritas.</p>
+        <div class="divider"></div>
+
+        <nav class="nav-buttons">
+            <button class="nav-button nav-button--active" data-section="sobre-mi">Sobre mí</button>
+            <button class="nav-button" data-section="peliculas">Películas favoritas</button>
+        </nav>
+
+        <!-- Sección SOBRE MÍ / CV -->
+        <section id="seccion-sobre-mi" class="section">
+            <div class="cv-layout">
+                <aside class="cv-sidebar">
+                    <div class="profile-wrapper">
+                        <img src="http://reddit.com/r/Simpsons/comments/1k4qrpg/how_fat_is_homer/?tl=es-es#lightbox" alt="" class="profile-photo">
+                        <div class="profile-sticker">😊</div>
+                    </div>
+                    <div class="cv-name" id="nombre">Jorge Peña</div>
+                    <div class="cv-title">Desarrollador Web Full Stack</div>
+                    <div class="cv-contact">
+                        <div>jorge.pena@example.com</div>
+                        <div>+591 7 888 888 888</div>
+                        <div>Santa Cruz, Bolivia</div>
+                    </div>
+                    <div class="cv-section-title">Habilidades</div>
+                    <ul class="cv-list">
+                        <li>HTML5 / CSS3 / JavaScript</li>
+                        <li>React, Node.js</li>
+                        <li>Diseño responsivo y accesibilidad</li>
+                    </ul>
+                </aside>
+
+                <main class="cv-main">
+                    <div class="cv-section-title">Datos personales</div>
+                    <p>
+                        Fecha de nacimiento: 01/23/2003<br>
+                        Nacionalidad: Boliviana<br>
+                        Estado civil: Soltero
+                    </p>
+
+                    <div class="cv-section-title">Sobre mí</div>
+                    <p>
+                        Me gusta aprender tecnologías nuevas, crear páginas web y resolver problemas con código.
+                        También disfruto de las películas de superhéroes y la ciencia ficción.
+                    </p>
+
+                    <div class="cv-section-title">Experiencia laboral</div>
+                    <ul class="cv-list">
+                        <li><strong>Desarrollador Web - Empresa X</strong> (2024 - Presente)</li>
+                        <li><strong>Frontend Developer - Startup Y</strong> (2019 - 2021)</li>
+                    </ul>
+
+                    <div class="cv-section-title">Educación</div>
+                    <ul class="cv-list">
+                        <li>Grado en Ingeniería Informática - Universidad UPC</li>
+                        <li>Diplomado en Desarrollo Web Profesional</li>
+                    </ul>
+                </main>
+            </div>
+        </section>
+
+        <!-- Sección PELÍCULAS -->
+        <section id="seccion-peliculas" class="section oculta">
+            <div class="cv-section-title">Mis películas favoritas</div>
+            <p class="info">
+                Aquí hay algunas de las películas que más me gustan.
+            </p>
+            <div class="movies-grid">
+                <article class="movie-card">
+                    <div class="movie-image">
+                        <img class="movie-poster"
+                             src="https://m.media-amazon.com/images/I/81r2y5c8hnL._AC_SY679_.jpg"
+                             alt="Spider-Man: No Way Home">
+                    </div>
+                    <div class="movie-title">Spider-Man: No Way Home</div>
+                    <div class="movie-year">2021 · Marvel</div>
+                    <p class="movie-notes">
+                        Multiverso, acción y nostalgia con los diferentes Spider-Man en una misma película.
+                    </p>
+                </article>
+
+                <article class="movie-card">
+                    <div class="movie-image">
+                        <img class="movie-poster"
+                             src="https://m.media-amazon.com/images/I/71t4GuxLCuL._AC_SY679_.jpg"
+                             alt="El señor de los anillos: El retorno del rey">
+                    </div>
+                    <div class="movie-title">El retorno del rey</div>
+                    <div class="movie-year">2003 · Peter Jackson</div>
+                    <p class="movie-notes">
+                        Un cierre épico para una de las mejores trilogías de fantasía de todos los tiempos.
+                    </p>
+                </article>
+
+                <article class="movie-card">
+                    <div class="movie-image">
+                        <img class="movie-poster"
+                             src="https://m.media-amazon.com/images/I/51K8ouYrHeL._AC_.jpg"
+                             alt="Batman: El caballero de la noche">
+                    </div>
+                    <div class="movie-title">Batman: El caballero de la noche</div>
+                    <div class="movie-year">2008 · Christopher Nolan</div>
+                    <p class="movie-notes">
+                        Un Joker inolvidable y una historia oscura que redefine el cine de superhéroes.
+                    </p>
+                </article>
+
+                <article class="movie-card">
+                    <div class="movie-image">
+                        <img class="movie-poster"
+                             src="https://m.media-amazon.com/images/I/81fOfE3-3oL._AC_SY679_.jpg"
+                             alt="Rápidos y furiosos">
+                    </div>
+                    <div class="movie-title">Rápidos y furiosos</div>
+                    <div class="movie-year">Saga</div>
+                    <p class="movie-notes">
+                        Coches, familia y mucha adrenalina. Ideal para maratonear con amigos.
+                    </p>
+                </article>
+
+                <article class="movie-card">
+                    <div class="movie-image">
+                        <img class="movie-poster"
+                             src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg"
+                             alt="Avengers: Endgame">
+                    </div>
+                    <div class="movie-title">Avengers: Endgame</div>
+                    <div class="movie-year">2019 · Marvel</div>
+                    <p class="movie-notes">
+                        El gran cierre de la saga del infinito, con casi todos los héroes juntos en una sola película.
+                    </p>
+                </article>
+
+                <article class="movie-card">
+                    <div class="movie-image">
+                        <img class="movie-poster"
+                             src="https://m.media-amazon.com/images/I/81k8A7BEZtL._AC_SY679_.jpg"
+                             alt="Interstellar">
+                    </div>
+                    <div class="movie-title">Interstellar</div>
+                    <div class="movie-year">2014 · Christopher Nolan</div>
+                    <p class="movie-notes">
+                        Viajes espaciales, agujeros de gusano y una historia muy humana sobre el tiempo y la familia.
+                    </p>
+                </article>
+
+                <article class="movie-card">
+                    <div class="movie-image">
+                        <img class="movie-poster"
+                             src="https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg"
+                             alt="Inception (El origen)">
+                    </div>
+                    <div class="movie-title">Inception (El origen)</div>
+                    <div class="movie-year">2010 · Christopher Nolan</div>
+                    <p class="movie-notes">
+                        Sueños dentro de sueños y una trama que te mantiene pensando hasta el final.
+                    </p>
+                </article>
+
+                <article class="movie-card">
+                    <div class="movie-image">
+                        <img class="movie-poster"
+                             src="https://m.media-amazon.com/images/I/81aA7hEEykL._AC_SY679_.jpg"
+                             alt="Matrix">
+                    </div>
+                    <div class="movie-title">Matrix</div>
+                    <div class="movie-year">1999 · Wachowski</div>
+                    <p class="movie-notes">
+                        Una revolución en los efectos especiales y una historia sobre la realidad y el control.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <div class="footer">
+            <p> 2026 - Desarrollo Web Profesional</p>
+        </div>
+    </div>
+
+    <script src="hola.js"></script>
+</body>
+</html>
