@@ -1,0 +1,475 @@
+/* Estilos generales para WED-HOLAMUN */
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container, .wrap {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px 32px;
+    max-width: 1200px;
+    width: 100%;
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Títulos */
+h1 {
+    color: #667eea;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle, .sub {
+    text-align: center;
+    color: #777;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+/* Navegación */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 18px 0 10px 0;
+}
+
+.nav-button {
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid #ccd3ff;
+    background: #f4f5ff;
+    color: #444;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.35);
+}
+
+.nav-button.nav-button--active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+}
+
+/* Secciones */
+.section {
+    margin-top: 18px;
+}
+
+.divider {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    margin: 30px auto;
+    border-radius: 2px;
+}
+
+.info {
+    color: #666;
+    font-size: 1em;
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+/* Layout CV */
+.cv-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.cv-sidebar {
+    background: #fafbff;
+    border-radius: 16px;
+    padding: 20px 18px;
+    text-align: center;
+}
+
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #667eea;
+    display: block;
+}
+
+.profile-sticker {
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffdd59;
+    border: 3px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.cv-name {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.cv-title {
+    font-size: 0.95em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.cv-contact {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.cv-section-title {
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    color: #444;
+}
+
+.cv-list {
+    margin-left: 18px;
+    margin-bottom: 6px;
+}
+
+.cv-list li {
+    margin-bottom: 3px;
+}
+
+.cv-main {
+    text-align: left;
+}
+
+/* Películas */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.movie-card {
+    border-radius: 16px;
+    border: 1px solid #e0e3ff;
+    padding: 10px 10px 14px 10px;
+    background: #fafbff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(102, 126, 234, 0.25);
+    border-color: #c4cafc;
+}
+
+.movie-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.movie-poster {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.movie-card:hover .movie-poster {
+    transform: scale(1.08);
+}
+
+.movie-title {
+    font-size: 0.98em;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.movie-year {
+    font-size: 0.8em;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+.movie-notes {
+    font-size: 0.82em;
+    color: #555;
+}
+
+/* Header y acciones para películas */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.18);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: #445;
+    border: 1px solid #e6e9ff;
+}
+
+/* Footer */
+.footer, footer {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Media Queries para responsividad */
+
+/* Móvil pequeño (hasta 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container, .wrap {
+        padding: 20px 16px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .cv-layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .cv-sidebar {
+        padding: 16px 12px;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-sticker {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+
+    .cv-name {
+        font-size: 1.3em;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+
+    .movie-poster {
+        height: 160px;
+    }
+
+    .movie-title {
+        font-size: 0.9em;
+    }
+
+    .movie-notes {
+        font-size: 0.75em;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .actions {
+        align-self: flex-end;
+    }
+}
+
+/* Móvil y tablet pequeño (hasta 768px) */
+@media (max-width: 768px) {
+    .nav-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .cv-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .movie-poster {
+        height: 180px;
+    }
+}
+
+/* Tablet (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container, .wrap {
+        max-width: 900px;
+        padding: 30px 24px;
+    }
+
+    .cv-layout {
+        grid-template-columns: 200px 1fr;
+        gap: 20px;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .movie-poster {
+        height: 240px;
+    }
+}
+
+/* Desktop (1025px a 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .container, .wrap {
+        max-width: 1100px;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .movie-poster {
+        height: 280px;
+    }
+}
+
+/* TV y pantallas grandes (1441px+) */
+@media (min-width: 1441px) {
+    body {
+        padding: 40px;
+    }
+
+    .container, .wrap {
+        max-width: 1400px;
+        padding: 60px 48px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .cv-layout {
+        grid-template-columns: 300px 1fr;
+        gap: 32px;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-sticker {
+        width: 52px;
+        height: 52px;
+        font-size: 1.6rem;
+    }
+
+    .cv-name {
+        font-size: 1.8em;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+    }
+
+    .movie-poster {
+        height: 350px;
+    }
+
+    .movie-title {
+        font-size: 1.1em;
+    }
+
+    .movie-notes {
+        font-size: 0.9em;
+    }
+}
