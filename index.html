@@ -3,77 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WED-HOLAMUN - Sobre mí y películas</title>
+    <title>Hola Mundo - Jorge Peña</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Mi página personal</h1>
-        <p class="subtitle">Sobre mí y algunas de mis películas favoritas.</p>
-        <div class="divider"></div>
-
-        <nav class="nav-buttons">
-            <a class="nav-button nav-button--active" href="#seccion-sobre-mi">Página personal</a>
-            <a class="nav-button" href="peliculas.html">sección de películas</a>
-        </nav>
-
-        <!-- Sección SOBRE MÍ / CV -->
-        <section id="seccion-sobre-mi" class="section">
-            <div class="cv-layout">
-                <aside class="cv-sidebar">
-                    <div class="profile-wrapper">
-                        <img src="https://via.placeholder.com/150" alt="Foto de perfil" class="profile-photo">
-                        <div class="profile-sticker">😊</div>
-                    </div>
-                    <div class="cv-name" id="nombre">Jorge Peña</div>
-                    <div class="cv-title">Desarrollador Web Full Stack</div>
-                    <div class="cv-contact">
-                        <div>jorge.pena@example.com</div>
-                        <div>+591 7 888 888 8</div>
-                        <div>Santa Cruz, Bolivia</div>
-                    </div>
-                    <div class="cv-section-title">Habilidades</div>
-                    <ul class="cv-list">
-                        <li>HTML5 / CSS3 / JavaScript</li>
-                        <li>React, Node.js</li>
-                        <li>Diseño responsivo y accesibilidad</li>
-                    </ul>
-                </aside>
-
-                <main class="cv-main">
-                    <div class="cv-section-title">Datos personales</div>
-                    <p>
-                        Fecha de nacimiento: 01/23/2003<br>
-                        Nacionalidad: Boliviana<br>
-                        Estado civil: Soltero
-                    </p>
-
-                    <div class="cv-section-title">Sobre mí</div>
-                    <p>
-                        Me gusta aprender tecnologías nuevas, crear páginas web y resolver problemas con código.
-                        También disfruto de las películas de superhéroes y la ciencia ficción.
-                    </p>
-
-                    <div class="cv-section-title">Experiencia laboral</div>
-                    <ul class="cv-list">
-                        <li><strong>Desarrollador Web - Empresa X</strong> (2024 - Presente)</li>
-                        <li><strong>Frontend Developer - Startup Y</strong> (2019 - 2021)</li>
-                    </ul>
-
-                    <div class="cv-section-title">Educación</div>
-                    <ul class="cv-list">
-                        <li>Grado en Ingeniería Informática - Universidad UPC</li>
-                        <li>Diplomado en Desarrollo Web Profesional</li>
-                    </ul>
-                </main>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Hola Mundo</h1>
+            <p>Soy Jorge Peña</p>
+            <div class="nav-buttons">
+                <a href="cv.html" class="btn btn-primary btn-lg">📄 Curriculum Vitae</a>
+                <a href="peliculas.html" class="btn btn-secondary btn-lg">🎬 Mis Películas</a>
             </div>
-        </section>
-
-        <!-- Sección PELÍCULAS eliminada: las películas ahora están en peliculas.html -->
-
-        <div class="footer">
-            <p> 2026 - Desarrollo Web </p>
         </div>
-    </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,5 @@
-/* Estilos generales para WED-HOLAMUN */
+/* Estilos personalizados moderno y responsivo */
 
-/* Reset y base */
 * {
     margin: 0;
     padding: 0;
@@ -9,30 +8,85 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 50%, #ea580c 100%);
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
     color: #333;
 }
 
-/* Contenedor principal */
-.container, .wrap {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    padding: 40px 32px;
-    max-width: 1200px;
-    width: 100%;
-    animation: slideIn 0.8s ease-out;
+/* Navbar y navegación */
+.navbar {
+    background: rgba(30, 58, 138, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 1rem 0;
 }
 
-@keyframes slideIn {
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #fff700 0%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-left: 1.5rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #fff700 0%, #fbbf24 100%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Pagina Principal */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    color: #fbbf24;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+}
+
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(-30px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -40,436 +94,324 @@ body {
     }
 }
 
-/* Títulos */
-h1 {
-    color: #667eea;
-    font-size: 2.2em;
-    margin-bottom: 10px;
-    text-align: center;
+/* CV Layout */
+.cv-container {
+    margin: 3rem auto;
+    max-width: 1200px;
 }
 
-.subtitle, .sub {
-    text-align: center;
-    color: #777;
-    font-size: 0.95em;
-    margin-bottom: 10px;
-}
-
-/* Navegación */
-.nav-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 18px 0 10px 0;
-}
-
-.nav-button {
-    padding: 8px 16px;
-    border-radius: 999px;
-    border: 1px solid #ccd3ff;
-    background: #f4f5ff;
-    color: #444;
-    font-size: 0.9em;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-}
-
-.nav-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.35);
-}
-
-.nav-button.nav-button--active {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border-color: transparent;
-}
-
-/* Secciones */
-.section {
-    margin-top: 18px;
-}
-
-.divider {
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    margin: 30px auto;
-    border-radius: 2px;
-}
-
-.info {
-    color: #666;
-    font-size: 1em;
-    margin: 20px 0;
-    line-height: 1.8;
-}
-
-/* Layout CV */
-.cv-layout {
+.cv-wrapper {
     display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 24px;
-    margin-top: 24px;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .cv-sidebar {
-    background: #fafbff;
-    border-radius: 16px;
-    padding: 20px 18px;
-    text-align: center;
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+    color: white;
+    padding: 3rem 2rem;
 }
 
-.profile-wrapper {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 14px;
+.cv-main {
+    background: #f9fafb;
+    padding: 3rem 2.5rem;
 }
 
 .profile-photo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    border: 5px solid #fbbf24;
+    margin: 0 auto 1.5rem;
     object-fit: cover;
-    border: 4px solid #667eea;
-    display: block;
 }
 
-.profile-sticker {
-    position: absolute;
-    right: -6px;
-    bottom: -6px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #ffdd59;
-    border: 3px solid #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
-.cv-name {
-    font-size: 1.5em;
+.profile-name {
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #333;
-    margin-bottom: 4px;
+    margin-bottom: 0.5rem;
+    color: #fff;
 }
 
-.cv-title {
-    font-size: 0.95em;
-    color: #667eea;
-    margin-bottom: 10px;
-}
-
-.cv-contact {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.cv-section-title {
+.profile-title {
+    color: #fbbf24;
     font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 4px;
-    color: #444;
+    margin-bottom: 2rem;
 }
 
-.cv-list {
-    margin-left: 18px;
-    margin-bottom: 6px;
-}
-
-.cv-list li {
-    margin-bottom: 3px;
-}
-
-.cv-main {
-    text-align: left;
-}
-
-/* Películas */
-.movies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 18px;
-    margin-top: 10px;
-}
-
-.movie-card {
-    border-radius: 16px;
-    border: 1px solid #e0e3ff;
-    padding: 10px 10px 14px 10px;
-    background: #fafbff;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.movie-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(102, 126, 234, 0.25);
-    border-color: #c4cafc;
-}
-
-.movie-image {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 8px;
-}
-
-.movie-poster {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.35s ease;
-}
-
-.movie-card:hover .movie-poster {
-    transform: scale(1.08);
-}
-
-.movie-title {
-    font-size: 0.98em;
-    font-weight: 600;
-    margin-bottom: 2px;
-}
-
-.movie-year {
-    font-size: 0.8em;
-    color: #777;
-    margin-bottom: 4px;
-}
-
-.movie-notes {
-    font-size: 0.82em;
-    color: #555;
-}
-
-/* Header y acciones para películas */
-header {
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    gap: 0.8rem;
 }
 
-.actions {
-    display: flex;
-    gap: 10px;
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 25px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
 }
 
-.btn {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 8px 14px;
+.info-item {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.info-item strong {
+    color: #fbbf24;
+}
+
+.skill-bar {
+    margin-bottom: 1.2rem;
+}
+
+.skill-name {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.skill-bar-bg {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+    border-radius: 10px;
+}
+
+.cv-main h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 3px solid #fbbf24;
+}
+
+.job-item {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid #fbbf24;
+}
+
+.job-title {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 0.3rem;
+}
+
+.job-company {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-period {
+    color: #fbbf24;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Cards Películas */
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(30, 58, 138, 0.2);
+}
+
+.card-img-top {
+    border-radius: 0;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* Botones */
+.btn-primary {
+    background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%) !important;
+    border: none;
     border-radius: 999px;
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.18);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.btn--ghost {
-    background: transparent;
-    color: #445;
-    border: 1px solid #e6e9ff;
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+    background: linear-gradient(135deg, #1e3a8a 0%, #991b1b 100%) !important;
 }
 
-/* Footer */
-.footer, footer {
-    margin-top: 28px;
-    padding-top: 16px;
-    border-top: 1px solid #eee;
-    color: #999;
-    font-size: 0.9em;
+.btn-secondary {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+    border: none;
+    border-radius: 999px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    color: #1e3a8a !important;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%) !important;
+}
+
+.btn-outline-light {
+    color: #fff !important;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    padding: 0.6rem 1.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background: #fff;
+    color: #1e3a8a !important;
+    transform: translateY(-3px);
+}
+
+/* Secciones generales */
+.section-container {
+    padding: 2rem;
+    margin: 2rem 0;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
     text-align: center;
+    margin-bottom: 2.5rem;
 }
 
-/* Media Queries para responsividad */
+.section-header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+}
 
-/* Móvil pequeño (hasta 480px) */
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
+.section-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
 
-    .container, .wrap {
-        padding: 20px 16px;
-        border-radius: 10px;
-    }
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
 
-    h1 {
-        font-size: 1.8em;
-    }
-
-    .cv-layout {
+/* Responsivo */
+@media (max-width: 768px) {
+    .cv-wrapper {
         grid-template-columns: 1fr;
-        gap: 16px;
     }
-
+    
     .cv-sidebar {
-        padding: 16px 12px;
+        padding: 2rem 1.5rem;
     }
-
+    
+    .cv-main {
+        padding: 2rem 1.5rem;
+    }
+    
+    .hero-section {
+        padding: 1.5rem;
+        min-height: 80vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .nav-link {
+        margin-left: 0;
+        padding: 0.5rem 0;
+    }
+    
+    .section-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card-img-top {
+        height: 200px;
+    }
+    
     .profile-photo {
         width: 120px;
         height: 120px;
     }
-
-    .profile-sticker {
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
-    }
-
-    .cv-name {
-        font-size: 1.3em;
-    }
-
-    .movies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 12px;
-    }
-
-    .movie-poster {
-        height: 160px;
-    }
-
-    .movie-title {
-        font-size: 0.9em;
-    }
-
-    .movie-notes {
-        font-size: 0.75em;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .actions {
-        align-self: flex-end;
-    }
 }
 
-/* Móvil y tablet pequeño (hasta 768px) */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+    .section-container {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .btn-primary, .btn-secondary, .btn-outline-light {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .section-header h1 {
+        font-size: 1.3rem;
+    }
+    
     .nav-buttons {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .nav-button {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-
-    .cv-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .movies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    }
-
-    .movie-poster {
-        height: 180px;
-    }
-}
-
-/* Tablet (769px a 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .container, .wrap {
-        max-width: 900px;
-        padding: 30px 24px;
-    }
-
-    .cv-layout {
-        grid-template-columns: 200px 1fr;
-        gap: 20px;
-    }
-
-    .movies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .movie-poster {
-        height: 240px;
-    }
-}
-
-/* Desktop (1025px a 1440px) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-    .container, .wrap {
-        max-width: 1100px;
-    }
-
-    .movies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .movie-poster {
-        height: 280px;
-    }
-}
-
-/* TV y pantallas grandes (1441px+) */
-@media (min-width: 1441px) {
-    body {
-        padding: 40px;
-    }
-
-    .container, .wrap {
-        max-width: 1400px;
-        padding: 60px 48px;
-    }
-
-    h1 {
-        font-size: 3em;
-    }
-
-    .cv-layout {
-        grid-template-columns: 300px 1fr;
-        gap: 32px;
-    }
-
-    .profile-photo {
-        width: 180px;
-        height: 180px;
-    }
-
-    .profile-sticker {
-        width: 52px;
-        height: 52px;
-        font-size: 1.6rem;
-    }
-
-    .cv-name {
-        font-size: 1.8em;
-    }
-
-    .movies-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 24px;
-    }
-
-    .movie-poster {
-        height: 350px;
-    }
-
-    .movie-title {
-        font-size: 1.1em;
-    }
-
-    .movie-notes {
-        font-size: 0.9em;
+        gap: 0.5rem;
     }
 }

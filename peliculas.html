@@ -3,49 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Películas — WED-HOLAMUN</title>
+    <title>Películas — Jorge Peña</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <div class="wrap">
-        <header>
-            <div>
-                <h1>Películas favoritas</h1>
-               
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html">🏠 Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv.html">Curriculum Vitae</a>
+                    </li>
+                </ul>
             </div>
-            <div class="actions">
-                <a href="index.html" class="btn btn--ghost">Volver</a>
+        </div>
+    </nav>
+
+    <div class="section-container" style="margin: 3rem auto; max-width: 1200px;">
+        <div class="section-header">
+            <h1>🎬 Películas Favoritas</h1>
+            <p>Algunas de mis películas preferidas de todos los tiempos</p>
+        </div>
+
+        <div class="row g-4 pb-4">
+            <!-- Película 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/48/Lord_Rings_Return_King.jpg" 
+                         class="card-img-top" alt="El retorno del rey">
+                    <div class="card-body">
+                        <h5 class="card-title">El señor de los anillos: El retorno del rey</h5>
+                        <p class="card-text">
+                            <small class="text-muted">2003 · Peter Jackson</small>
+                        </p>
+                        <p class="card-text">
+                            Un cierre épico para una de las mejores trilogías de fantasía de todos los tiempos. 
+                            Masterpiece del cine.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
             </div>
-        </header>
 
-        <div class="divider"></div>
-
-        <main>
-            <div class="movies-grid">
-                <article class="movie-card">
-                    <img class="movie-poster" src="https://m.media-amazon.com/images/I/71t4GuxLCuL._AC_SY679_.jpg" alt="El retorno del rey">
-                    <div class="movie-title">El señor de los anillos: El retorno del rey</div>
-                    <div class="movie-year">2003 · Peter Jackson</div>
-                    <p class="movie-notes">Un cierre épico para una de las mejores trilogías de fantasía de todos los tiempos.</p>
-                </article>
-
-                <article class="movie-card">
-                    <img class="movie-poster" src="https://m.media-amazon.com/images/I/51K8ouYrHeL._AC_.jpg" alt="Batman: El caballero de la noche">
-                    <div class="movie-title">Batman: El caballero de la noche</div>
-                    <div class="movie-year">2008 · Christopher Nolan</div>
-                    <p class="movie-notes">Un Joker inolvidable y una historia oscura que redefine el cine de superhéroes.</p>
-                </article>
-
-                <article class="movie-card">
-                    <img class="movie-poster" src="https://m.media-amazon.com/images/I/81fOfE3-3oL._AC_SY679_.jpg" alt="Rápidos y furiosos">
-                    <div class="movie-title">Rápidos y furiosos</div>
-                    <div class="movie-year">Saga</div>
-                    <p class="movie-notes">Coches, familia y mucha adrenalina. Ideal para maratonear con amigos.</p>
-                </article>
+            <!-- Película 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/8/83/Dark_knight_rises_poster.jpg" 
+                         class="card-img-top" alt="Batman: El caballero de la noche">
+                    <div class="card-body">
+                        <h5 class="card-title">Batman: El caballero de la noche</h5>
+                        <p class="card-text">
+                            <small class="text-muted">2008 · Christopher Nolan</small>
+                        </p>
+                        <p class="card-text">
+                            Un Joker inolvidable y una historia oscura que redefine completamente el cine 
+                            de superhéroes.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
             </div>
-        </main>
 
-        <footer>2026 — Desarrollo Web</footer>
-    </div>
+            <!-- Película 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Fast_and_Furious_Poster.jpg" 
+                         class="card-img-top" alt="Rápidos y furiosos">
+                    <div class="card-body">
+                        <h5 class="card-title">Rápidos y Furiosos</h5>
+                        <p class="card-text">
+                            <small class="text-muted">Saga Completa</small>
+                        </p>
+                        <p class="card-text">
+                            Coches, familia y mucha adrenalina. Ideal para disfrutar en grupo y pasar 
+                            un buen momento.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Película 4 - Avatar -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/d6/Avatar_%282009_film%29_poster.jpg" 
+                         class="card-img-top" alt="Avatar">
+                    <div class="card-body">
+                        <h5 class="card-title">Avatar</h5>
+                        <p class="card-text">
+                            <small class="text-muted">2009 · James Cameron</small>
+                        </p>
+                        <p class="card-text">
+                            Una aventura épica en el planeta Pandora. La primera película en superar los 
+                            2 mil millones de dólares en taquilla.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Película 5 - Inception -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg" 
+                         class="card-img-top" alt="Inception">
+                    <div class="card-body">
+                        <h5 class="card-title">Inception</h5>
+                        <p class="card-text">
+                            <small class="text-muted">2010 · Christopher Nolan</small>
+                        </p>
+                        <p class="card-text">
+                            Un viaje alucinante a través de los sueños con giros inesperados y una 
+                            cinematografía impresionante.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Película 6 - Interstellar -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg" 
+                         class="card-img-top" alt="Interstellar">
+                    <div class="card-body">
+                        <h5 class="card-title">Interstellar</h5>
+                        <p class="card-text">
+                            <small class="text-muted">2014 · Christopher Nolan</small>
+                        </p>
+                        <p class="card-text">
+                            Una epopeya espacial que explora el tiempo, el espacio y el amor humano. 
+                            Simplemente increíble.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Película 7 - Avengers: Endgame -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg" 
+                         class="card-img-top" alt="The Avengers: Endgame">
+                    <div class="card-body">
+                        <h5 class="card-title">The Avengers: Endgame</h5>
+                        <p class="card-text">
+                            <small class="text-muted">2019 · Russo Brothers</small>
+                        </p>
+                        <p class="card-text">
+                            El cierre épico del universo Marvel. Un final emocionante después de 11 años 
+                            de películas.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Película 8 - Star Wars: Una Nueva Esperanza -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg" 
+                         class="card-img-top" alt="Star Wars">
+                    <div class="card-body">
+                        <h5 class="card-title">Star Wars: Una Nueva Esperanza</h5>
+                        <p class="card-text">
+                            <small class="text-muted">1977 · George Lucas</small>
+                        </p>
+                        <p class="card-text">
+                            El inicio de una saga legendaria. La que lo cambió todo en el cine de 
+                            ciencia ficción y aventuras.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Película 9 - Jurassic Park -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg" 
+                         class="card-img-top" alt="Jurassic Park">
+                    <div class="card-body">
+                        <h5 class="card-title">Jurassic Park</h5>
+                        <p class="card-text">
+                            <small class="text-muted">1993 · Steven Spielberg</small>
+                        </p>
+                        <p class="card-text">
+                            Dinosaurios que cobran vida. Una mezcla perfecta de ciencia, aventura y 
+                            efectos revolucionarios.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Película 10 - Titanic -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png" 
+                         class="card-img-top" alt="Titanic">
+                    <div class="card-body">
+                        <h5 class="card-title">Titanic</h5>
+                        <p class="card-text">
+                            <small class="text-muted">1997 · James Cameron</small>
+                        </p>
+                        <p class="card-text">
+                            Una historia de amor épica en el barco más famoso del mundo. La película 
+                            más taquillera de la historia.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Película 11 - El Rey León -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/The_Lion_King_poster.jpg" 
+                         class="card-img-top" alt="El Rey León">
+                    <div class="card-body">
+                        <h5 class="card-title">El Rey León</h5>
+                        <p class="card-text">
+                            <small class="text-muted">1994 · Disney</small>
+                        </p>
+                        <p class="card-text">
+                            Una historia clásica de crecimiento, responsabilidad y el ciclo de la vida. 
+                            Música inolvidable por Elton John.
+                        </p>
+                        <div class="text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
